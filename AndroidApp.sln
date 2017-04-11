@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{E7CC9A7D-1A3C-42B7-84C8-10EDEE7E852C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{61457DB5-E28C-4020-A91F-5BD57C49A544}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{9545A0B2-3195-40EF-945F-ABC2698BDB91}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{34A059FA-AFFD-4E0D-9DF4-FA563E25DB5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidApp.Infra.Data", "src\AndroidApp.Infra.Data\AndroidApp.Infra.Data.csproj", "{AF499C95-BB32-4D26-AB82-8C81F1E93FAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidApp.Domain", "src\AndroidApp.Domain\AndroidApp.Domain.csproj", "{2CB32C43-2BCE-465C-AD3A-5852D16CD79D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidApp.Domain.Core", "src\AndroidApp.Domain.Core\AndroidApp.Domain.Core.csproj", "{3DA785D2-E3D1-4E6B-A963-A1FCCBBD54FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF499C95-BB32-4D26-AB82-8C81F1E93FAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF499C95-BB32-4D26-AB82-8C81F1E93FAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF499C95-BB32-4D26-AB82-8C81F1E93FAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF499C95-BB32-4D26-AB82-8C81F1E93FAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CB32C43-2BCE-465C-AD3A-5852D16CD79D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CB32C43-2BCE-465C-AD3A-5852D16CD79D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CB32C43-2BCE-465C-AD3A-5852D16CD79D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CB32C43-2BCE-465C-AD3A-5852D16CD79D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DA785D2-E3D1-4E6B-A963-A1FCCBBD54FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DA785D2-E3D1-4E6B-A963-A1FCCBBD54FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DA785D2-E3D1-4E6B-A963-A1FCCBBD54FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DA785D2-E3D1-4E6B-A963-A1FCCBBD54FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AF499C95-BB32-4D26-AB82-8C81F1E93FAA} = {34A059FA-AFFD-4E0D-9DF4-FA563E25DB5C}
+		{2CB32C43-2BCE-465C-AD3A-5852D16CD79D} = {9545A0B2-3195-40EF-945F-ABC2698BDB91}
+		{3DA785D2-E3D1-4E6B-A963-A1FCCBBD54FB} = {9545A0B2-3195-40EF-945F-ABC2698BDB91}
+	EndGlobalSection
+EndGlobal
