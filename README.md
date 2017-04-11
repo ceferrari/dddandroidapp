@@ -1,1 +1,1 @@
-# dddandroidapp
+# Domain Driven Design Android App
