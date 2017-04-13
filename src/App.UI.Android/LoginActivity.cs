@@ -3,8 +3,8 @@ using Android.OS;
 
 namespace App.UI.Android
 {
-    [Activity(Label = "App.UI.Android", MainLauncher = false, Icon = "@drawable/icon")]
-    public class MainActivity : Activity
+    [Activity(Label = "App.UI.Android", MainLauncher = true, Icon = "@drawable/icon")]
+    public class LoginActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
         {

@@ -11,8 +11,7 @@ namespace App.Application.ViewModels
         public Guid Id { get; set; }
 
         [Required(ErrorMessage = "O Nome é obrigatório")]
-        [MinLength(2)]
-        [MaxLength(100)]
+        [StringLength(100, MinimumLength = 6, ErrorMessage = "O {0} deve ter entre {2} e {1} caracteres")]
         [DisplayName("Nome")]
         public string Name { get; set; }
 
