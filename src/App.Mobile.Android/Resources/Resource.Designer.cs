@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("App.UI.Android.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("App.Mobile.Android.Resource", IsApplication=true)]
 
-namespace App.UI.Android
+namespace App.Mobile.Android
 {
 	
 	
@@ -47,6 +47,9 @@ namespace App.UI.Android
 			// aapt resource value: 0x7f020000
 			public const int Icon = 2130837504;
 			
+			// aapt resource value: 0x7f020001
+			public const int logo_200x200 = 2130837505;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -60,8 +63,35 @@ namespace App.UI.Android
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f050006
+			public const int Entrar = 2131034118;
+			
+			// aapt resource value: 0x7f050007
+			public const int Registrar = 2131034119;
+			
+			// aapt resource value: 0x7f050005
+			public const int checkBox1 = 2131034117;
+			
+			// aapt resource value: 0x7f050003
+			public const int editText1 = 2131034115;
+			
+			// aapt resource value: 0x7f050004
+			public const int editText2 = 2131034116;
+			
+			// aapt resource value: 0x7f050008
+			public const int editText3 = 2131034120;
+			
+			// aapt resource value: 0x7f050009
+			public const int editText4 = 2131034121;
+			
+			// aapt resource value: 0x7f050001
+			public const int imageView1 = 2131034113;
+			
 			// aapt resource value: 0x7f050000
 			public const int linearLayout1 = 2131034112;
+			
+			// aapt resource value: 0x7f050002
+			public const int textView1 = 2131034114;
 			
 			static Id()
 			{
