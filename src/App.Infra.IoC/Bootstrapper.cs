@@ -1,14 +1,29 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System;
+using App.Domain.Interfaces.Repositories;
+using App.Infra.Data.Contexts;
+using App.Infra.Data.Repositories;
+using AutoMapper;
+using Microsoft.Extensions.DependencyInjection;
+using App.Application.Interfaces;
+using App.Application.Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace App.Infra.IoC
 {
     public class Bootstrapper
     {
-        public static void RegisterServices(IServiceCollection services)
+        public static IServiceProvider RegisterServices(IServiceCollection services, string dbPath = null)
         {
-            //services.AddSingleton<IAuthorizationHandler, ClaimsRequirementHandler>();
-            //services.AddTransient<ISmsSender, AuthSMSMessageSender>();
-            //services.AddScoped<IUser, AspNetUser>();
+            if (!string.IsNullOrEmpty(dbPath))
+            {
+                services.AddEntityFrameworkSqlite().AddDbContext<SqliteContext>(x => x.UseSqlite($"Filename={dbPath}"));
+                services.AddScoped<IRepository, Repository<SqliteContext>>();
+            }
+
+            services.AddScoped<IMapper, Mapper>();
+            services.AddScoped<ICustomerService, CustomerService>();
+
+            return services.BuildServiceProvider();
         }
     }
 }

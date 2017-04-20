@@ -1,120 +1,97 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using App.Domain.Core.Models;
-using App.Domain.Interfaces;
-using App.Infra.Data.Contexts;
+using App.Domain.Interfaces.Entities;
+using App.Domain.Interfaces.Repositories;
 
 namespace App.Infra.Data.Repositories
 {
-    public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity
+    public class Repository<TContext> : ReadOnlyRepository<TContext>, IRepository
+        where TContext : DbContext
     {
-        protected readonly MainContext Db;
-        protected readonly DbSet<TEntity> DbSet;
-
-        protected Repository(MainContext context)
+        public Repository(TContext context)
+            : base(context)
         {
-            Db = context;
-            DbSet = Db.Set<TEntity>();
+            Context.ChangeTracker.AutoDetectChangesEnabled = true;
+            Context.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.TrackAll;
         }
 
-        public virtual bool Insert(TEntity entity)
+        public virtual TEntity Create<TEntity>(TEntity entity, string createdBy = null)
+            where TEntity : class, IEntity
         {
-            DbSet.Add(entity);
-            return SaveChanges();
+            entity.CreatedDate = DateTime.UtcNow;
+            entity.CreatedBy = createdBy;
+            Context.Set<TEntity>().Add(entity);
+            return entity;
         }
 
-        public virtual bool Update(TEntity entity)
+        public virtual ICollection<TEntity> CreateRange<TEntity>(ICollection<TEntity> entities, string createdBy = null)
+            where TEntity : class, IEntity
         {
-            DbSet.Update(entity);
-            return SaveChanges();
-        }
-
-        public virtual bool Remove(TEntity entity)
-        {
-            DbSet.Remove(entity);
-            return SaveChanges();
-        }
-
-        public virtual bool Merge(TEntity entity)
-        {
-            //DbSet.AddOrUpdate(entity);
-            return SaveChanges();
-        }
-
-        public virtual bool InsertRange(ICollection<TEntity> entity)
-        {
-            DbSet.AddRange(entity);
-            return SaveChanges();
-        }
-
-        public virtual bool UpdateRange(ICollection<TEntity> entity)
-        {
-            DbSet.UpdateRange(entity);
-            return SaveChanges();
-        }
-
-        public virtual bool RemoveRange(ICollection<TEntity> entity)
-        {
-            DbSet.RemoveRange(entity);
-            return SaveChanges();
-        }
-
-        public virtual bool RemoveWhere(Expression<Func<TEntity, bool>> condicoes)
-        {
-            return RemoveRange(DbSet.Where(condicoes).ToList());
-        }
-
-        public virtual TEntity FindByKey(params object[] key)
-        {
-            return DbSet.Find(key);
-        }
-
-        public virtual TEntity Find(Expression<Func<TEntity, bool>> condicoes = null, bool noContexto = false)
-        {
-            var query = noContexto ? DbSet : DbSet.AsNoTracking();
-            return condicoes == null ? query.FirstOrDefault() : query.FirstOrDefault(condicoes);
-        }
-
-        public virtual Count Count(Expression<Func<TEntity, bool>> condicoes = null)
-        {
-            return new Count(condicoes == null ? DbSet.AsNoTracking().Count() : DbSet.AsNoTracking().Count(condicoes));
-        }
-
-        public virtual IQueryable<TEntity> List(
-            Expression<Func<TEntity, bool>> condicoes = null,
-            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
-            int? offset = null, int? limit = null, bool noContexto = false)
-        {
-            var query = noContexto ? DbSet : DbSet.AsNoTracking();
-            if (condicoes != null)
+            foreach (var entity in entities)
             {
-                query = query.Where(condicoes);
+                entity.CreatedDate = DateTime.UtcNow;
+                entity.CreatedBy = createdBy;
             }
-            if (orderBy != null)
+            Context.Set<TEntity>().AddRange(entities);
+            return entities;
+        }
+
+        public virtual TEntity Update<TEntity>(TEntity entity, string modifiedBy = null)
+            where TEntity : class, IEntity
+        {
+            entity.ModifiedDate = DateTime.UtcNow;
+            entity.ModifiedBy = modifiedBy;
+            //Context.Set<TEntity>().Attach(entity);
+            //Context.Entry(entity).State = EntityState.Modified;
+            Context.Set<TEntity>().Update(entity);
+            return entity;
+        }
+
+        public virtual TEntity CreateOrUpdate<TEntity>(TEntity entity, string createdOrModifiedBy = null)
+            where TEntity : class, IEntity
+        {
+            return GetExists<TEntity>() ? Update(entity) : Create(entity);
+        }
+
+        public virtual void Delete<TEntity>(TEntity entity)
+            where TEntity : class, IEntity
+        {
+            var dbSet = Context.Set<TEntity>();
+            if (Context.Entry(entity).State == EntityState.Detached)
             {
-                query = orderBy(query);
+                dbSet.Attach(entity);
             }
-            return offset != null && limit != null ? query.Skip(offset.Value).Take(limit.Value) : query;
+            dbSet.Remove(entity);
         }
 
-        public virtual bool TruncteTable()
+        public virtual void Delete<TEntity>(object id)
+            where TEntity : class, IEntity
         {
-            return true;
-            //return Db.Database.ExecuteSqlCommand($"TRUNCATE TABLE {Db.GetTableName<TEntity>()}") > 0;
+            TEntity entity = Context.Set<TEntity>().Find(id);
+            Delete(entity);
         }
 
-        public bool SaveChanges()
+        public virtual void Delete<TEntity>(Expression<Func<TEntity, bool>> filter = null)
+            where TEntity : class, IEntity
         {
-            return Db.SaveChanges() > 0;
+            foreach (var entity in Get(filter))
+            {
+                Delete(entity);
+            }
         }
 
-        public void Dispose()
+        public virtual void Save()
         {
-            Db.Dispose();
-            GC.SuppressFinalize(this);
+            Context.SaveChanges();
+        }
+
+        public virtual Task SaveAsync()
+        {
+            Context.SaveChangesAsync();
+            return Task.FromResult(0);
         }
     }
 }

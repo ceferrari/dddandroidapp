@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillViewport="true"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_orange_light">
+        <ImageView
+            android:src="@drawable/logo_200x200"
+            android:layout_width="match_parent"
+            android:layout_height="50pt"
+            android:id="@+id/MainLogo"
+            android:layout_marginTop="10pt" />
+        <TextView
+            android:text="Principal"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="30pt"
+            android:id="@+id/MainLabel"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="24pt"
+            android:layout_marginLeft="15pt"
+            android:layout_marginRight="15pt"
+            android:layout_marginTop="5pt"
+            android:textAllCaps="true"
+            android:textColor="@android:color/holo_blue_dark" />
+        <Button
+            android:text="Sair"
+            android:layout_width="match_parent"
+            android:layout_height="25pt"
+            android:id="@+id/MainSignOut"
+            android:layout_marginTop="50pt"
+            android:layout_marginLeft="15pt"
+            android:layout_marginRight="15pt"
+            android:textSize="12pt"
+            android:backgroundTint="#ff0099cc"
+            android:textAllCaps="true" />
+    </LinearLayout>
+</ScrollView>

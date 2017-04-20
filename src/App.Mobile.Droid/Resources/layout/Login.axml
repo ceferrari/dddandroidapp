@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillViewport="true"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_orange_light">
+        <ImageView
+            android:src="@drawable/logo_200x200"
+            android:layout_width="match_parent"
+            android:layout_height="50pt"
+            android:id="@+id/LoginLogo"
+            android:layout_marginTop="10pt" />
+        <TextView
+            android:text="Login"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="30pt"
+            android:id="@+id/LoginLabel"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="24pt"
+            android:layout_marginLeft="15pt"
+            android:layout_marginRight="15pt"
+            android:layout_marginTop="5pt"
+            android:textAllCaps="true"
+            android:textColor="@android:color/holo_blue_dark" />
+        <EditText
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="25pt"
+            android:id="@+id/LoginEmail"
+            android:hint="E-mail"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="12pt"
+            android:layout_marginLeft="15pt"
+            android:layout_marginRight="15pt"
+            android:layout_marginTop="10pt"
+            android:paddingLeft="5pt"
+            android:drawableLeft="@android:drawable/sym_action_email"
+            android:drawablePadding="5pt"
+            android:drawableTint="#ffb4b4b4" />
+        <EditText
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="25pt"
+            android:id="@+id/LoginPassword"
+            android:hint="Senha"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="12pt"
+            android:layout_marginLeft="15pt"
+            android:layout_marginRight="15pt"
+            android:layout_marginTop="5pt"
+            android:drawableLeft="@android:drawable/ic_lock_idle_lock"
+            android:drawablePadding="5pt"
+            android:paddingLeft="5pt"
+            android:drawableTint="#ffb4b4b4" />
+        <CheckBox
+            android:text="Lembrar-me"
+            android:layout_width="match_parent"
+            android:layout_height="15pt"
+            android:id="@+id/LoginRememberMe"
+            android:layout_marginTop="5pt"
+            android:layout_marginLeft="15pt"
+            android:layout_marginRight="15pt"
+            android:textSize="10pt" />
+        <Button
+            android:text="Entrar"
+            android:layout_width="match_parent"
+            android:layout_height="25pt"
+            android:id="@+id/LoginSignIn"
+            android:layout_marginTop="10pt"
+            android:layout_marginLeft="15pt"
+            android:layout_marginRight="15pt"
+            android:textSize="12pt"
+            android:textAllCaps="true"
+            android:backgroundTint="#ff0099cc" />
+        <Button
+            android:text="Registrar"
+            android:layout_width="match_parent"
+            android:layout_height="25pt"
+            android:id="@+id/LoginSignUp"
+            android:layout_marginLeft="15pt"
+            android:layout_marginRight="15pt"
+            android:textSize="12pt"
+            android:backgroundTint="#ff66cdaa"
+            android:textAllCaps="true" />
+    </LinearLayout>
+</ScrollView>
