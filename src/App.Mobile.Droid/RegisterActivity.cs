@@ -7,6 +7,8 @@ using App.Application.ViewModels;
 using App.Mobile.Droid.Helpers;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using Android.Graphics;
+using Plugin.Iconize.Droid.Controls;
 
 namespace App.Mobile.Droid
 {
@@ -26,8 +28,34 @@ namespace App.Mobile.Droid
 
             _alert = new AlertHelper(this);
             _toast = new ToastHelper(this);
-            _save = FindViewById<Button>(Resource.Id.RegisterSave);
 
+            var icoPerson = new IconDrawable(this, "ion-ios-person-outline")
+                .SizeDp(24)
+                .Color(Color.Gray);
+
+            var txtName = FindViewById<TextView>(Resource.Id.RegisterName);
+            txtName.SetCompoundDrawablesWithIntrinsicBounds(icoPerson, null, null, null);
+
+
+            var icoEnvelope = new IconDrawable(this, "ion-ios-email-outline")
+                .SizeDp(24)
+                .Color(Color.Gray);
+
+            var txtEmail = FindViewById<TextView>(Resource.Id.RegisterEmail);
+            txtEmail.SetCompoundDrawablesWithIntrinsicBounds(icoEnvelope, null, null, null);
+
+            var icoLock = new IconDrawable(this, "ion-ios-locked-outline")
+                .SizeDp(24)
+                .Color(Color.Gray);
+
+            var txtPassword = FindViewById<TextView>(Resource.Id.RegisterPassword);
+            txtPassword.SetCompoundDrawablesWithIntrinsicBounds(icoLock, null, null, null);
+
+            var txtConfirmPassword = FindViewById<TextView>(Resource.Id.RegisterConfirmPassword);
+            txtConfirmPassword.SetCompoundDrawablesWithIntrinsicBounds(icoLock, null, null, null);
+
+
+            _save = FindViewById<Button>(Resource.Id.RegisterSave);
             _save.Click += Save;
         }
 

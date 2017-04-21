@@ -7,7 +7,10 @@ using App.Application.ViewModels;
 using App.Mobile.Droid.Helpers;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Linq;
 using Android.Graphics;
+using Plugin.Iconize.Droid.Controls;
+using Plugin.Iconize.Fonts;
 
 namespace App.Mobile.Droid
 {
@@ -32,6 +35,20 @@ namespace App.Mobile.Droid
 
             _alert = new AlertHelper(this);
             _toast = new ToastHelper(this);
+
+            var icoEnvelope = new IconDrawable(this, "ion-ios-email-outline")
+                .SizeDp(24)
+                .Color(Color.Gray);
+
+            var txtEmail = FindViewById<TextView>(Resource.Id.LoginEmail);
+            txtEmail.SetCompoundDrawablesWithIntrinsicBounds(icoEnvelope, null, null, null);
+
+            var icoLock = new IconDrawable(this, "ion-ios-locked-outline")
+                .SizeDp(24)
+                .Color(Color.Gray);
+
+            var txtPassword = FindViewById<TextView>(Resource.Id.LoginPassword);
+            txtPassword.SetCompoundDrawablesWithIntrinsicBounds(icoLock, null, null, null);
 
             var btnSignIn = FindViewById<Button>(Resource.Id.LoginSignIn);
             btnSignIn.Click += SignIn;

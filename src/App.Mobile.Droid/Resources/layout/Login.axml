@@ -39,16 +39,17 @@
             android:id="@+id/LoginEmail"
             android:hint="E-mail"
             android:background="@android:color/white"
-            android:textColor="@android:color/black"
+            android:textColor="@color/material_grey_800"
             android:textColorHint="@android:color/darker_gray"
             android:textSize="12pt"
             android:layout_marginLeft="15pt"
             android:layout_marginRight="15pt"
             android:layout_marginTop="10pt"
             android:paddingLeft="5pt"
-            android:drawableLeft="@android:drawable/sym_action_email"
             android:drawablePadding="5pt"
-            android:drawableTint="#ffb4b4b4" />
+            android:drawableTint="#ffb4b4b4"
+            android:drawableLeft="@android:drawable/star_on"
+            android:maxLines="1" />
         <EditText
             android:inputType="textPassword"
             android:layout_width="match_parent"
@@ -56,16 +57,17 @@
             android:id="@+id/LoginPassword"
             android:hint="Senha"
             android:background="@android:color/white"
-            android:textColor="@android:color/black"
+            android:textColor="@color/material_grey_800"
             android:textColorHint="@android:color/darker_gray"
             android:textSize="12pt"
             android:layout_marginLeft="15pt"
             android:layout_marginRight="15pt"
             android:layout_marginTop="5pt"
-            android:drawableLeft="@android:drawable/ic_lock_idle_lock"
+            android:drawableLeft="@android:drawable/star_on"
             android:drawablePadding="5pt"
             android:paddingLeft="5pt"
-            android:drawableTint="#ffb4b4b4" />
+            android:drawableTint="#ffb4b4b4"
+            android:maxLines="1" />
         <CheckBox
             android:text="Lembrar-me"
             android:layout_width="match_parent"
@@ -74,7 +76,7 @@
             android:layout_marginTop="5pt"
             android:layout_marginLeft="15pt"
             android:layout_marginRight="15pt"
-            android:textSize="10pt" />
+            android:textSize="11pt" />
         <Button
             android:text="Entrar"
             android:layout_width="match_parent"
@@ -85,7 +87,8 @@
             android:layout_marginRight="15pt"
             android:textSize="12pt"
             android:textAllCaps="true"
-            android:backgroundTint="#ff0099cc" />
+            android:backgroundTint="#ff0099cc"
+            android:capitalize="words" />
         <Button
             android:text="Registrar"
             android:layout_width="match_parent"
@@ -95,6 +98,7 @@
             android:layout_marginRight="15pt"
             android:textSize="12pt"
             android:backgroundTint="#ff66cdaa"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            android:capitalize="words" />
     </LinearLayout>
 </ScrollView>
