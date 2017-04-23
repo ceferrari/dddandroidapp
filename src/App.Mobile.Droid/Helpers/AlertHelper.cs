@@ -1,23 +1,18 @@
-﻿using System.Threading.Tasks;
-using Android.App;
+﻿using Android.App;
 using App.Mobile.Shared.Interfaces.Helpers;
+using System.Threading.Tasks;
 
 namespace App.Mobile.Droid.Helpers
 {
-    public class AlertHelper : IAlertHelper
+    public sealed class AlertHelper : IAlertHelper
     {
-        private readonly Activity _context;
+        public Activity Activity { get; set; }
 
-        public AlertHelper(Activity activity)
-        {
-            _context = activity;
-        }
-        
-        public Task<MessageResult> ShowDialog(string title, string message, bool cancelable = false, MessageResult positiveButton = MessageResult.Ok, MessageResult negativeButton = MessageResult.None, MessageResult neutralButton = MessageResult.None, int iconAttribute = global::Android.Resource.Drawable.IcDialogAlert)
+        public Task<MessageResult> ShowDialog(string title, string message, bool cancelable = false, MessageResult positiveButton = MessageResult.Ok, MessageResult negativeButton = MessageResult.None, MessageResult neutralButton = MessageResult.None, int iconAttribute = 0)
         {
             var tcs = new TaskCompletionSource<MessageResult>();
 
-            var builder = new AlertDialog.Builder(_context);
+            var builder = new AlertDialog.Builder(Activity);
             builder.SetIconAttribute(iconAttribute);
             builder.SetTitle(title);
             builder.SetMessage(message);
@@ -36,7 +31,7 @@ namespace App.Mobile.Droid.Helpers
                 tcs.SetResult(neutralButton);
             });
 
-            _context.RunOnUiThread(() =>
+            Activity.RunOnUiThread(() =>
             {
                 builder.Show();
             });

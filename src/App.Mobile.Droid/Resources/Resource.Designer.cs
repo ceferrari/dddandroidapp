@@ -1615,49 +1615,109 @@ namespace App.Mobile.Droid
 			public const int abc_vector_test = 2130837586;
 			
 			// aapt resource value: 0x7f020053
-			public const int Icon = 2130837587;
+			public const int back = 2130837587;
 			
 			// aapt resource value: 0x7f020054
-			public const int logo_200x200 = 2130837588;
+			public const int bg_abstract_01 = 2130837588;
 			
 			// aapt resource value: 0x7f020055
-			public const int logo_200x200_rounded = 2130837589;
+			public const int bg_abstract_02 = 2130837589;
 			
 			// aapt resource value: 0x7f020056
-			public const int notification_action_background = 2130837590;
+			public const int bg_abstract_03 = 2130837590;
 			
 			// aapt resource value: 0x7f020057
-			public const int notification_bg = 2130837591;
+			public const int bg_abstract_04 = 2130837591;
 			
 			// aapt resource value: 0x7f020058
-			public const int notification_bg_low = 2130837592;
+			public const int bg_abstract_05 = 2130837592;
 			
 			// aapt resource value: 0x7f020059
-			public const int notification_bg_low_normal = 2130837593;
+			public const int bg_abstract_06 = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
-			public const int notification_bg_low_pressed = 2130837594;
+			public const int bg_abstract_07 = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int notification_bg_normal = 2130837595;
+			public const int bg_abstract_08 = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int notification_bg_normal_pressed = 2130837596;
+			public const int bg_abstract_09 = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int notification_icon_background = 2130837597;
-			
-			// aapt resource value: 0x7f020060
-			public const int notification_template_icon_bg = 2130837600;
-			
-			// aapt resource value: 0x7f020061
-			public const int notification_template_icon_low_bg = 2130837601;
+			public const int bg_abstract_10 = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int notification_tile_bg = 2130837598;
+			public const int bg_abstract_11 = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int notify_panel_notification_icon_bg = 2130837599;
+			public const int EditTextUnderline = 2130837599;
+			
+			// aapt resource value: 0x7f020060
+			public const int EditTextUnderline_Focus = 2130837600;
+			
+			// aapt resource value: 0x7f020061
+			public const int EditTextUnderline_Normal = 2130837601;
+			
+			// aapt resource value: 0x7f020062
+			public const int Icon = 2130837602;
+			
+			// aapt resource value: 0x7f020063
+			public const int logo_200x200 = 2130837603;
+			
+			// aapt resource value: 0x7f020064
+			public const int logo_200x200_rounded = 2130837604;
+			
+			// aapt resource value: 0x7f020065
+			public const int notification_action_background = 2130837605;
+			
+			// aapt resource value: 0x7f020066
+			public const int notification_bg = 2130837606;
+			
+			// aapt resource value: 0x7f020067
+			public const int notification_bg_low = 2130837607;
+			
+			// aapt resource value: 0x7f020068
+			public const int notification_bg_low_normal = 2130837608;
+			
+			// aapt resource value: 0x7f020069
+			public const int notification_bg_low_pressed = 2130837609;
+			
+			// aapt resource value: 0x7f02006a
+			public const int notification_bg_normal = 2130837610;
+			
+			// aapt resource value: 0x7f02006b
+			public const int notification_bg_normal_pressed = 2130837611;
+			
+			// aapt resource value: 0x7f02006c
+			public const int notification_icon_background = 2130837612;
+			
+			// aapt resource value: 0x7f020074
+			public const int notification_template_icon_bg = 2130837620;
+			
+			// aapt resource value: 0x7f020075
+			public const int notification_template_icon_low_bg = 2130837621;
+			
+			// aapt resource value: 0x7f02006d
+			public const int notification_tile_bg = 2130837613;
+			
+			// aapt resource value: 0x7f02006e
+			public const int notify_panel_notification_icon_bg = 2130837614;
+			
+			// aapt resource value: 0x7f02006f
+			public const int RoundedButton = 2130837615;
+			
+			// aapt resource value: 0x7f020070
+			public const int RoundedButton_Focus = 2130837616;
+			
+			// aapt resource value: 0x7f020071
+			public const int RoundedButton_Normal = 2130837617;
+			
+			// aapt resource value: 0x7f020072
+			public const int RoundedButton_Press = 2130837618;
+			
+			// aapt resource value: 0x7f020073
+			public const int Splash = 2130837619;
 			
 			static Drawable()
 			{
@@ -1672,8 +1732,8 @@ namespace App.Mobile.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0a0058
-			public const int LoginEmail = 2131361880;
+			// aapt resource value: 0x7f0a0059
+			public const int LoginEmail = 2131361881;
 			
 			// aapt resource value: 0x7f0a0057
 			public const int LoginLabel = 2131361879;
@@ -1681,53 +1741,59 @@ namespace App.Mobile.Droid
 			// aapt resource value: 0x7f0a0056
 			public const int LoginLogo = 2131361878;
 			
-			// aapt resource value: 0x7f0a0059
-			public const int LoginPassword = 2131361881;
+			// aapt resource value: 0x7f0a005c
+			public const int LoginOr = 2131361884;
 			
 			// aapt resource value: 0x7f0a005a
-			public const int LoginRememberMe = 2131361882;
+			public const int LoginPassword = 2131361882;
 			
 			// aapt resource value: 0x7f0a005b
 			public const int LoginSignIn = 2131361883;
 			
-			// aapt resource value: 0x7f0a005c
-			public const int LoginSignUp = 2131361884;
-			
-			// aapt resource value: 0x7f0a005e
-			public const int MainLabel = 2131361886;
-			
 			// aapt resource value: 0x7f0a005d
-			public const int MainLogo = 2131361885;
+			public const int LoginSignUp = 2131361885;
+			
+			// aapt resource value: 0x7f0a0058
+			public const int LoginSubLabel = 2131361880;
 			
 			// aapt resource value: 0x7f0a005f
-			public const int MainSignOut = 2131361887;
+			public const int MainLabel = 2131361887;
 			
-			// aapt resource value: 0x7f0a007c
-			public const int RegisterConfirmPassword = 2131361916;
+			// aapt resource value: 0x7f0a0061
+			public const int MainList = 2131361889;
 			
-			// aapt resource value: 0x7f0a007a
-			public const int RegisterEmail = 2131361914;
+			// aapt resource value: 0x7f0a005e
+			public const int MainLogo = 2131361886;
 			
-			// aapt resource value: 0x7f0a0078
-			public const int RegisterLabel = 2131361912;
-			
-			// aapt resource value: 0x7f0a0077
-			public const int RegisterLogo = 2131361911;
-			
-			// aapt resource value: 0x7f0a0079
-			public const int RegisterName = 2131361913;
-			
-			// aapt resource value: 0x7f0a007b
-			public const int RegisterPassword = 2131361915;
-			
-			// aapt resource value: 0x7f0a007d
-			public const int RegisterSave = 2131361917;
+			// aapt resource value: 0x7f0a0060
+			public const int MainSignOut = 2131361888;
 			
 			// aapt resource value: 0x7f0a007e
-			public const int SplashLogo = 2131361918;
+			public const int RegisterConfirmPassword = 2131361918;
 			
-			// aapt resource value: 0x7f0a0063
-			public const int action0 = 2131361891;
+			// aapt resource value: 0x7f0a007c
+			public const int RegisterEmail = 2131361916;
+			
+			// aapt resource value: 0x7f0a007a
+			public const int RegisterLabel = 2131361914;
+			
+			// aapt resource value: 0x7f0a0079
+			public const int RegisterLogo = 2131361913;
+			
+			// aapt resource value: 0x7f0a007b
+			public const int RegisterName = 2131361915;
+			
+			// aapt resource value: 0x7f0a007d
+			public const int RegisterPassword = 2131361917;
+			
+			// aapt resource value: 0x7f0a007f
+			public const int RegisterSave = 2131361919;
+			
+			// aapt resource value: 0x7f0a0080
+			public const int SplashLogo = 2131361920;
+			
+			// aapt resource value: 0x7f0a0065
+			public const int action0 = 2131361893;
 			
 			// aapt resource value: 0x7f0a0047
 			public const int action_bar = 2131361863;
@@ -1750,17 +1816,17 @@ namespace App.Mobile.Droid
 			// aapt resource value: 0x7f0a0024
 			public const int action_bar_title = 2131361828;
 			
-			// aapt resource value: 0x7f0a0060
-			public const int action_container = 2131361888;
+			// aapt resource value: 0x7f0a0062
+			public const int action_container = 2131361890;
 			
 			// aapt resource value: 0x7f0a0048
 			public const int action_context_bar = 2131361864;
 			
-			// aapt resource value: 0x7f0a0067
-			public const int action_divider = 2131361895;
+			// aapt resource value: 0x7f0a0069
+			public const int action_divider = 2131361897;
 			
-			// aapt resource value: 0x7f0a0061
-			public const int action_image = 2131361889;
+			// aapt resource value: 0x7f0a0063
+			public const int action_image = 2131361891;
 			
 			// aapt resource value: 0x7f0a0002
 			public const int action_menu_divider = 2131361794;
@@ -1777,11 +1843,11 @@ namespace App.Mobile.Droid
 			// aapt resource value: 0x7f0a0026
 			public const int action_mode_close_button = 2131361830;
 			
-			// aapt resource value: 0x7f0a0062
-			public const int action_text = 2131361890;
+			// aapt resource value: 0x7f0a0064
+			public const int action_text = 2131361892;
 			
-			// aapt resource value: 0x7f0a0070
-			public const int actions = 2131361904;
+			// aapt resource value: 0x7f0a0072
+			public const int actions = 2131361906;
 			
 			// aapt resource value: 0x7f0a0027
 			public const int activity_chooser_view_content = 2131361831;
@@ -1804,14 +1870,14 @@ namespace App.Mobile.Droid
 			// aapt resource value: 0x7f0a002e
 			public const int buttonPanel = 2131361838;
 			
-			// aapt resource value: 0x7f0a0064
-			public const int cancel_action = 2131361892;
+			// aapt resource value: 0x7f0a0066
+			public const int cancel_action = 2131361894;
 			
 			// aapt resource value: 0x7f0a003e
 			public const int checkbox = 2131361854;
 			
-			// aapt resource value: 0x7f0a006c
-			public const int chronometer = 2131361900;
+			// aapt resource value: 0x7f0a006e
+			public const int chronometer = 2131361902;
 			
 			// aapt resource value: 0x7f0a001e
 			public const int collapseActionView = 2131361822;
@@ -1840,8 +1906,8 @@ namespace App.Mobile.Droid
 			// aapt resource value: 0x7f0a001b
 			public const int end = 2131361819;
 			
-			// aapt resource value: 0x7f0a0076
-			public const int end_padder = 2131361910;
+			// aapt resource value: 0x7f0a0078
+			public const int end_padder = 2131361912;
 			
 			// aapt resource value: 0x7f0a0028
 			public const int expand_activities_button = 2131361832;
@@ -1858,8 +1924,8 @@ namespace App.Mobile.Droid
 			// aapt resource value: 0x7f0a002c
 			public const int icon = 2131361836;
 			
-			// aapt resource value: 0x7f0a0071
-			public const int icon_group = 2131361905;
+			// aapt resource value: 0x7f0a0073
+			public const int icon_group = 2131361907;
 			
 			// aapt resource value: 0x7f0a001f
 			public const int ifRoom = 2131361823;
@@ -1867,14 +1933,14 @@ namespace App.Mobile.Droid
 			// aapt resource value: 0x7f0a0029
 			public const int image = 2131361833;
 			
-			// aapt resource value: 0x7f0a006d
-			public const int info = 2131361901;
-			
-			// aapt resource value: 0x7f0a0072
-			public const int line1 = 2131361906;
+			// aapt resource value: 0x7f0a006f
+			public const int info = 2131361903;
 			
 			// aapt resource value: 0x7f0a0074
-			public const int line3 = 2131361908;
+			public const int line1 = 2131361908;
+			
+			// aapt resource value: 0x7f0a0076
+			public const int line3 = 2131361910;
 			
 			// aapt resource value: 0x7f0a0009
 			public const int listMode = 2131361801;
@@ -1882,8 +1948,8 @@ namespace App.Mobile.Droid
 			// aapt resource value: 0x7f0a002b
 			public const int list_item = 2131361835;
 			
-			// aapt resource value: 0x7f0a0066
-			public const int media_actions = 2131361894;
+			// aapt resource value: 0x7f0a0068
+			public const int media_actions = 2131361896;
 			
 			// aapt resource value: 0x7f0a001c
 			public const int middle = 2131361820;
@@ -1900,14 +1966,14 @@ namespace App.Mobile.Droid
 			// aapt resource value: 0x7f0a000a
 			public const int normal = 2131361802;
 			
-			// aapt resource value: 0x7f0a006f
-			public const int notification_background = 2131361903;
+			// aapt resource value: 0x7f0a0071
+			public const int notification_background = 2131361905;
 			
-			// aapt resource value: 0x7f0a0069
-			public const int notification_main_column = 2131361897;
+			// aapt resource value: 0x7f0a006b
+			public const int notification_main_column = 2131361899;
 			
-			// aapt resource value: 0x7f0a0068
-			public const int notification_main_column_container = 2131361896;
+			// aapt resource value: 0x7f0a006a
+			public const int notification_main_column_container = 2131361898;
 			
 			// aapt resource value: 0x7f0a0030
 			public const int parentPanel = 2131361840;
@@ -1921,11 +1987,11 @@ namespace App.Mobile.Droid
 			// aapt resource value: 0x7f0a0040
 			public const int radio = 2131361856;
 			
-			// aapt resource value: 0x7f0a006e
-			public const int right_icon = 2131361902;
+			// aapt resource value: 0x7f0a0070
+			public const int right_icon = 2131361904;
 			
-			// aapt resource value: 0x7f0a006a
-			public const int right_side = 2131361898;
+			// aapt resource value: 0x7f0a006c
+			public const int right_side = 2131361900;
 			
 			// aapt resource value: 0x7f0a0015
 			public const int screen = 2131361813;
@@ -1999,8 +2065,8 @@ namespace App.Mobile.Droid
 			// aapt resource value: 0x7f0a0018
 			public const int src_over = 2131361816;
 			
-			// aapt resource value: 0x7f0a0065
-			public const int status_bar_latest_event_content = 2131361893;
+			// aapt resource value: 0x7f0a0067
+			public const int status_bar_latest_event_content = 2131361895;
 			
 			// aapt resource value: 0x7f0a0041
 			public const int submenuarrow = 2131361857;
@@ -2011,11 +2077,11 @@ namespace App.Mobile.Droid
 			// aapt resource value: 0x7f0a000b
 			public const int tabMode = 2131361803;
 			
-			// aapt resource value: 0x7f0a0075
-			public const int text = 2131361909;
+			// aapt resource value: 0x7f0a0077
+			public const int text = 2131361911;
 			
-			// aapt resource value: 0x7f0a0073
-			public const int text2 = 2131361907;
+			// aapt resource value: 0x7f0a0075
+			public const int text2 = 2131361909;
 			
 			// aapt resource value: 0x7f0a0035
 			public const int textSpacerNoButtons = 2131361845;
@@ -2023,8 +2089,8 @@ namespace App.Mobile.Droid
 			// aapt resource value: 0x7f0a0034
 			public const int textSpacerNoTitle = 2131361844;
 			
-			// aapt resource value: 0x7f0a006b
-			public const int time = 2131361899;
+			// aapt resource value: 0x7f0a006d
+			public const int time = 2131361901;
 			
 			// aapt resource value: 0x7f0a002d
 			public const int title = 2131361837;
@@ -2383,6 +2449,9 @@ namespace App.Mobile.Droid
 			
 			// aapt resource value: 0x7f0700a2
 			public const int Animation_AppCompat_DropDownUp = 2131165346;
+			
+			// aapt resource value: 0x7f070160
+			public const int AppTheme = 2131165536;
 			
 			// aapt resource value: 0x7f0700a3
 			public const int Base_AlertDialog_AppCompat = 2131165347;
@@ -2923,6 +2992,9 @@ namespace App.Mobile.Droid
 			
 			// aapt resource value: 0x7f07003e
 			public const int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131165246;
+			
+			// aapt resource value: 0x7f07015f
+			public const int SplashTheme = 2131165535;
 			
 			// aapt resource value: 0x7f0700ce
 			public const int TextAppearance_AppCompat = 2131165390;

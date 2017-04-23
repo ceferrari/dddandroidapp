@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="App.Mobile.Droid.App.Mobile.Droid" android:versionCode="1" android:versionName="1.0">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="Precizzo.App.Mobile.Droid" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="16" />
-	<application android:label="App.Mobile.Droid"></application>
+	<uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+	<application android:label="Precizzo" android:icon="@drawable/logo_200x200_rounded"></application>
 </manifest>

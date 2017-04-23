@@ -1,15 +1,24 @@
 ﻿using Android.Content;
-using Android.Preferences;
+using App.Application.ViewModels;
+using System.Threading.Tasks;
 
 namespace App.Mobile.Droid.Helpers
 {
-    public class SessionManager
+    public sealed class SessionManager
     {
-        private const string PrefUserName = "username";
+        private const string PrefSession = "session";
+        private const string PrefUserId = "userId";
+        private const string PrefUserName = "userName";
+        private const string PrefUserEmail = "userEmail";
 
         public static ISharedPreferences GetSharedPreferences(Context ctx)
         {
-            return PreferenceManager.GetDefaultSharedPreferences(ctx);
+            return ctx.GetSharedPreferences(PrefSession, FileCreationMode.Private);
+        }
+
+        public static string GetUserId(Context ctx)
+        {
+            return GetSharedPreferences(ctx).GetString(PrefUserId, "");
         }
 
         public static string GetUserName(Context ctx)
@@ -17,23 +26,39 @@ namespace App.Mobile.Droid.Helpers
             return GetSharedPreferences(ctx).GetString(PrefUserName, "");
         }
 
-        public static void SingIn(Context ctx, string userName)
+        public static string GetUserEmail(Context ctx)
         {
-            var editor = GetSharedPreferences(ctx).Edit();
-            editor.PutString(PrefUserName, userName);
-            editor.Commit();
+            return GetSharedPreferences(ctx).GetString(PrefUserEmail, "");
         }
 
-        public static void SingOut(Context ctx)
+        public static async Task SingIn(Context ctx, CustomerViewModel customer)
         {
-            var editor = GetSharedPreferences(ctx).Edit();
-            editor.Clear();
-            editor.Commit();
+            await Task.Run(() =>
+            {
+                var editor = GetSharedPreferences(ctx).Edit();
+                editor.PutString(PrefUserId, customer.Id.ToString());
+                editor.PutString(PrefUserName, customer.Name);
+                editor.PutString(PrefUserEmail, customer.Email);
+                editor.Commit();
+            });
+        }
+
+        public static async Task SingOut(Context ctx)
+        {
+            await Task.Run(() =>
+            {
+                var editor = GetSharedPreferences(ctx).Edit();
+                editor.Clear();
+                editor.Commit();
+            });
         }
 
         public static bool IsActive(Context ctx)
         {
-            return GetUserName(ctx).Length > 0;
+            return 
+                GetUserId(ctx).Length > 0 && 
+                GetUserName(ctx).Length > 0 &&
+                GetUserEmail(ctx).Length > 0;
         }
     }
 }

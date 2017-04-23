@@ -14,10 +14,11 @@
         android:background="@android:color/holo_orange_light">
         <ImageView
             android:src="@drawable/logo_200x200"
-            android:layout_width="match_parent"
-            android:layout_height="50pt"
+            android:layout_width="wrap_content"
             android:id="@+id/MainLogo"
-            android:layout_marginTop="10pt" />
+            android:layout_marginTop="10pt"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
         <TextView
             android:text="Principal"
             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -37,11 +38,21 @@
             android:layout_width="match_parent"
             android:layout_height="25pt"
             android:id="@+id/MainSignOut"
-            android:layout_marginTop="50pt"
             android:layout_marginLeft="15pt"
             android:layout_marginRight="15pt"
             android:textSize="12pt"
             android:backgroundTint="#ff0099cc"
             android:textAllCaps="true" />
+        <ListView
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/MainList"
+            android:layout_marginLeft="15pt"
+            android:layout_marginRight="15pt"
+            android:layout_marginTop="5pt"
+            android:layout_marginBottom="10pt"
+            android:background="@android:color/white" />
     </LinearLayout>
 </ScrollView>

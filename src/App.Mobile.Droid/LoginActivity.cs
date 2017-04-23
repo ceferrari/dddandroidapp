@@ -1,4 +1,5 @@
 ﻿using Android.App;
+using Android.Graphics;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
@@ -6,46 +7,41 @@ using App.Application.Interfaces;
 using App.Application.ViewModels;
 using App.Mobile.Droid.Helpers;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Linq;
-using Android.Graphics;
 using Plugin.Iconize.Droid.Controls;
-using Plugin.Iconize.Fonts;
+using System;
+using System.Threading.Tasks;
 
 namespace App.Mobile.Droid
 {
     [Activity(MainLauncher = false)]
     public class LoginActivity : Activity
     {
-        private AlertHelper _alert;
-        private ToastHelper _toast;
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             if (SessionManager.IsActive(this))
             {
-                StartActivity(typeof(MainActivity));
-                return;
+                Task.WhenAll(
+                    App.StartActivity(this, typeof(MainActivity), true),
+                    App.Toast(this, "Bem-vindo de volta!")
+                );
             }
-
+            
             SetContentView(Resource.Layout.Login);
             Window.SetSoftInputMode(SoftInput.StateAlwaysHidden);
+            Initialize();
+        }
 
-            _alert = new AlertHelper(this);
-            _toast = new ToastHelper(this);
-
-            var icoEnvelope = new IconDrawable(this, "ion-ios-email-outline")
-                .SizeDp(24)
-                .Color(Color.Gray);
+        private void Initialize()
+        {
+            const int iconSize = 24;
+            var iconColor = Color.White;
+            var icoEnvelope = new IconDrawable(this, "md-mail-outline").SizeDp(iconSize).Color(iconColor);
+            var icoLock = new IconDrawable(this, "md-lock-outline").SizeDp(iconSize).Color(iconColor);
 
             var txtEmail = FindViewById<TextView>(Resource.Id.LoginEmail);
             txtEmail.SetCompoundDrawablesWithIntrinsicBounds(icoEnvelope, null, null, null);
-
-            var icoLock = new IconDrawable(this, "ion-ios-locked-outline")
-                .SizeDp(24)
-                .Color(Color.Gray);
 
             var txtPassword = FindViewById<TextView>(Resource.Id.LoginPassword);
             txtPassword.SetCompoundDrawablesWithIntrinsicBounds(icoLock, null, null, null);
@@ -62,31 +58,30 @@ namespace App.Mobile.Droid
             var email = FindViewById<TextView>(Resource.Id.LoginEmail);
             var password = FindViewById<TextView>(Resource.Id.LoginPassword);
 
-            var customerViewModel = new CustomerViewModel
+            var vm = new CustomerViewModel
             {
                 Email = email.Text
             };
 
             var customerService = App.Provider.GetService<ICustomerService>();
-            if (customerService.Exists(customerViewModel))
+            var customer = customerService.GetFirst(vm);
+            if (customer != null)
             {
-                StartActivity(typeof(MainActivity));
-                await _toast.Show("Login efetuado com sucesso!");
+                await Task.WhenAll(
+                    SessionManager.SingIn(this, customer),
+                    App.StartActivity(this, typeof(MainActivity), true),
+                    App.Toast(this, "Login efetuado com sucesso!")
+                );
             }
             else
             {
-                await _toast.Show("E-mail e/ou Senha inválido(s).");
+                await App.Toast(this, "E-mail e/ou Senha inválido(s).");
             }
         }
 
-        private void SignUp(object sender, EventArgs args)
+        private async void SignUp(object sender, EventArgs args)
         {
-            StartActivity(typeof(RegisterActivity));
-
-            //if (await _alert.ShowDialog("Error", "Message", true, MessageResult.Yes, MessageResult.No) == MessageResult.Yes)
-            //{
-            //    await _toast.Show("Login efetuado com sucesso!");
-            //}
+            await App.StartActivity(this, typeof(RegisterActivity));
         }
     }
 }

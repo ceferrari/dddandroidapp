@@ -14,10 +14,11 @@
         android:background="@android:color/holo_orange_light">
         <ImageView
             android:src="@drawable/logo_200x200"
-            android:layout_width="match_parent"
-            android:layout_height="50pt"
+            android:layout_width="wrap_content"
             android:id="@+id/RegisterLogo"
-            android:layout_marginTop="10pt" />
+            android:layout_marginTop="10pt"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
         <TextView
             android:text="Registro"
             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -68,7 +69,6 @@
             android:drawableTint="#ffb4b4b4"
             android:maxLines="1" />
         <EditText
-            android:inputType="textPassword"
             android:layout_width="match_parent"
             android:layout_height="25pt"
             android:id="@+id/RegisterPassword"

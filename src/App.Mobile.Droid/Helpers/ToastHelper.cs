@@ -1,26 +1,21 @@
-﻿using System.Threading.Tasks;
-using Android.App;
+﻿using Android.App;
 using Android.Widget;
 using App.Mobile.Shared.Interfaces.Helpers;
+using System.Threading.Tasks;
 
 namespace App.Mobile.Droid.Helpers
 {
-    public class ToastHelper : IToastHelper
+    public sealed class ToastHelper : IToastHelper
     {
-        private readonly Activity _context;
-
-        public ToastHelper(Activity activity)
-        {
-            _context = activity;
-        }
+        public Activity Activity { get; set; }
 
         public Task<bool> Show(string text, int duration = 0, ToastNotificationType type = ToastNotificationType.None)
         {
             var tcs = new TaskCompletionSource<bool>();
 
-            _context.RunOnUiThread(() =>
+            Activity.RunOnUiThread(() =>
             {
-                Toast.MakeText(_context, text, duration == 0 ? ToastLength.Short : ToastLength.Long).Show();
+                Toast.MakeText(Activity, text, duration == 0 ? ToastLength.Short : ToastLength.Long).Show();
             });
 
             return tcs.Task;

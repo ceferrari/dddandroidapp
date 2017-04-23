@@ -2,24 +2,34 @@
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using App.Application.Interfaces;
+using App.Mobile.Droid.Adapters;
 using App.Mobile.Droid.Helpers;
+using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Threading.Tasks;
 
 namespace App.Mobile.Droid
 {
     [Activity(MainLauncher = false)]
-    public class MainActivity : Activity
+    public sealed class MainActivity : Activity
     {
-        private ToastHelper _toast;
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.Main);
             Window.SetSoftInputMode(SoftInput.StateAlwaysHidden);
+            Initialize();
+        }
 
-            _toast = new ToastHelper(this);
+        private void Initialize()
+        {
+            var customerService = App.Provider.GetService<ICustomerService>();
+            var customers = customerService.GetAll();
+
+            var listView = FindViewById<ListView>(Resource.Id.MainList);
+            listView.Adapter = new CustomersAdapter(this, customers);
 
             var btnSignOut = FindViewById<Button>(Resource.Id.MainSignOut);
             btnSignOut.Click += SignOut;
@@ -27,11 +37,11 @@ namespace App.Mobile.Droid
 
         private async void SignOut(object sender, EventArgs args)
         {
-            SessionManager.SingOut(this);
-
-            StartActivity(typeof(LoginActivity));
-
-            await _toast.Show("Logout efetuado com sucesso!");
+            await Task.WhenAll(
+                SessionManager.SingOut(this),
+                App.StartActivity(this, typeof(LoginActivity), true),
+                App.Toast(this, "Logout efetuado com sucesso!")
+            );
         }
     }
 }
