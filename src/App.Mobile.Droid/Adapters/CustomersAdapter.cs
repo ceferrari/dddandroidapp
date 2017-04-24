@@ -5,6 +5,7 @@ using Android.Widget;
 using App.Application.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
+using App.Mobile.Droid.Helpers;
 using Object = Java.Lang.Object;
 
 namespace App.Mobile.Droid.Adapters
@@ -37,7 +38,12 @@ namespace App.Mobile.Droid.Adapters
         {
             var view = convertView ?? _activity.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem2, parent, false);
 
-            view.SetBackgroundResource(Resource.Drawable.back);
+            //view.SetBackgroundResource(Resource.Drawable.back);
+
+            view.SetBackgroundColor(SessionManager.GetUserId(_activity)
+                .Equals(_customers.ElementAt(position).Id.ToString())
+                ? Color.LightSkyBlue
+                : Color.White);
 
             var text1 = view.FindViewById<TextView>(Android.Resource.Id.Text1);
             text1.Text = _customers.ElementAt(position).Name;

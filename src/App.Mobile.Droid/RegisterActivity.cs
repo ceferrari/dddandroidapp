@@ -1,4 +1,7 @@
-﻿using Android.App;
+﻿using System;
+using System.Threading.Tasks;
+using Android.App;
+using Android.Content.Res;
 using Android.Graphics;
 using Android.OS;
 using Android.Views;
@@ -7,8 +10,6 @@ using App.Application.Interfaces;
 using App.Application.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using Plugin.Iconize.Droid.Controls;
-using System;
-using System.Threading.Tasks;
 
 namespace App.Mobile.Droid
 {
@@ -27,10 +28,11 @@ namespace App.Mobile.Droid
         private void Initialize()
         {
             const int iconSize = 24;
-            var iconColor = Color.Gray;
+            var iconColor = Color.White;
             var icoPerson = new IconDrawable(this, "md-person-outline").SizeDp(iconSize).Color(iconColor);
             var icoEnvelope = new IconDrawable(this, "md-mail-outline").SizeDp(iconSize).Color(iconColor);
             var icoLock = new IconDrawable(this, "md-lock-outline").SizeDp(iconSize).Color(iconColor);
+
             var txtName = FindViewById<TextView>(Resource.Id.RegisterName);
             txtName.SetCompoundDrawablesWithIntrinsicBounds(icoPerson, null, null, null);
 

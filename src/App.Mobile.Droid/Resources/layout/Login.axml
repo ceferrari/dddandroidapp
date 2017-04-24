@@ -15,10 +15,10 @@
         android:backgroundTint="#ff4169e1"
         android:backgroundTintMode="screen">
         <ImageView
-            android:src="@drawable/logo_200x200"
+            android:src="@drawable/logo_200x200_rounded"
             android:layout_width="wrap_content"
             android:id="@+id/LoginLogo"
-            android:layout_marginTop="10pt"
+            android:layout_marginTop="5pt"
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
         <TextView
@@ -38,25 +38,25 @@
             android:text="Faça o login para entrar no sistema"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/LoginSubLabel"
+            android:id="@+id/LoginSublabel"
             android:gravity="center"
-            android:textSize="8pt"
+            android:textSize="7pt"
             android:layout_marginLeft="15pt"
             android:layout_marginRight="15pt"
-            android:shadowColor="#ff000000"
-            android:shadowRadius="2"
-            android:textColor="#cccccc" />
+            android:textColor="#6a5acd"
+            android:layout_marginTop="-4pt"
+            android:textStyle="normal" />
         <EditText
             android:inputType="textEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/LoginEmail"
             android:hint="E-mail"
-            android:textColorHint="#ffffffff"
+            android:textColorHint="#cccccccc"
             android:textSize="12pt"
             android:layout_marginLeft="20pt"
             android:layout_marginRight="20pt"
-            android:layout_marginTop="10pt"
+            android:layout_marginTop="5pt"
             android:paddingLeft="2pt"
             android:drawablePadding="5pt"
             android:drawableLeft="@android:drawable/star_on"
@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/LoginPassword"
             android:hint="Senha"
-            android:textColorHint="#ffffffff"
+            android:textColorHint="#cccccccc"
             android:textSize="12pt"
             android:layout_marginLeft="20pt"
             android:layout_marginRight="20pt"
@@ -123,7 +123,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="20dp"
                 android:layout_toLeftOf="@id/LoginOr"
                 android:background="#e0e0e0" />
             <View
@@ -131,7 +131,7 @@
                 android:layout_height="2dp"
                 android:layout_toRightOf="@id/LoginOr"
                 android:background="#e0e0e0"
-                android:layout_marginRight="15dp"
+                android:layout_marginRight="20dp"
                 android:layout_centerVertical="true" />
         </RelativeLayout>
         <Button

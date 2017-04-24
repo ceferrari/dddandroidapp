@@ -11,48 +11,64 @@
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/holo_orange_light">
+        android:background="@drawable/bg_abstract_11"
+        android:backgroundTint="#ff4169e1"
+        android:backgroundTintMode="screen">
         <ImageView
-            android:src="@drawable/logo_200x200"
+            android:src="@drawable/logo_200x200_rounded"
             android:layout_width="wrap_content"
             android:id="@+id/MainLogo"
-            android:layout_marginTop="10pt"
+            android:layout_marginTop="5pt"
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
         <TextView
-            android:text="Principal"
+            android:text="Precizzo"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="match_parent"
-            android:layout_height="30pt"
+            android:layout_height="wrap_content"
             android:id="@+id/MainLabel"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textSize="24pt"
             android:layout_marginLeft="15pt"
             android:layout_marginRight="15pt"
             android:layout_marginTop="5pt"
             android:textAllCaps="true"
-            android:textColor="@android:color/holo_blue_dark" />
-        <Button
-            android:text="Sair"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="24pt" />
+        <TextView
+            android:text="Lista de usuários cadastrados no sistema"
             android:layout_width="match_parent"
-            android:layout_height="25pt"
-            android:id="@+id/MainSignOut"
+            android:layout_height="wrap_content"
+            android:id="@+id/MainSublabel"
+            android:gravity="center"
+            android:textSize="7pt"
             android:layout_marginLeft="15pt"
             android:layout_marginRight="15pt"
-            android:textSize="12pt"
-            android:backgroundTint="#ff0099cc"
-            android:textAllCaps="true" />
+            android:textColor="#6a5acd"
+            android:layout_marginTop="-4pt"
+            android:textStyle="normal" />
         <ListView
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="115pt"
             android:id="@+id/MainList"
+            android:layout_marginTop="5pt"
+            android:layout_marginLeft="15pt"
+            android:layout_marginRight="15pt" />
+        <Button
+            android:text="SAIR"
+            android:layout_width="match_parent"
+            android:layout_height="25pt"
+            android:id="@+id/MainSignOut"
+            android:layout_marginTop="5pt"
             android:layout_marginLeft="15pt"
             android:layout_marginRight="15pt"
-            android:layout_marginTop="5pt"
-            android:layout_marginBottom="10pt"
-            android:background="@android:color/white" />
+            android:textSize="12pt"
+            android:textAllCaps="true"
+            android:capitalize="words"
+            android:background="@drawable/roundedbutton"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold"
+            android:backgroundTint="#ff0099cc" />
     </LinearLayout>
 </ScrollView>

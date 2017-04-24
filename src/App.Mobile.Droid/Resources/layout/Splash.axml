@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="@color/material_grey_300">
+    android:background="@drawable/bg_abstract_11"
+    android:backgroundTint="#ff4169e1"
+    android:backgroundTintMode="screen">
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
