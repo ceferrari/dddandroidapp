@@ -50,7 +50,7 @@
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
-            android:layout_height="115pt"
+            android:layout_height="117pt"
             android:id="@+id/MainList"
             android:layout_marginTop="5pt"
             android:layout_marginLeft="15pt"
