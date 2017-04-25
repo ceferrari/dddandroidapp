@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Android.App;
+using Android.Content.PM;
 using Android.Content.Res;
 using Android.Graphics;
 using Android.OS;
@@ -13,7 +14,7 @@ using Plugin.Iconize.Droid.Controls;
 
 namespace App.Mobile.Droid
 {
-    [Activity(MainLauncher = false)]
+    [Activity(MainLauncher = false, LaunchMode = LaunchMode.SingleTask)]
     public sealed class RegisterActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

@@ -10,27 +10,32 @@ using Microsoft.Extensions.DependencyInjection;
 using Plugin.Iconize.Droid.Controls;
 using System;
 using System.Threading.Tasks;
+using Android.Content.PM;
 
 namespace App.Mobile.Droid
 {
-    [Activity(MainLauncher = false)]
+    [Activity(MainLauncher = false, LaunchMode = LaunchMode.SingleTask)]
     public class LoginActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            if (SessionManager.IsActive(this))
-            {
-                Task.WhenAll(
-                    App.StartActivity(this, typeof(MainActivity), true),
-                    App.Toast(this, "Bem-vindo de volta!")
-                );
-            }
-            
+            Task.WhenAll(CheckSession());
+
             SetContentView(Resource.Layout.Login);
             Window.SetSoftInputMode(SoftInput.StateAlwaysHidden);
             Initialize();
+        }
+
+        private async Task CheckSession()
+        {
+            if (SessionManager.IsActive(this))
+            {
+                await App.StartActivity(this, typeof(MainActivity), true);
+                await Task.Delay(1000);
+                await App.Toast(this, "Bem-vindo de volta!");
+            }
         }
 
         private void Initialize()
@@ -57,6 +62,12 @@ namespace App.Mobile.Droid
         {
             var email = FindViewById<TextView>(Resource.Id.LoginEmail);
             var password = FindViewById<TextView>(Resource.Id.LoginPassword);
+
+            if (string.IsNullOrWhiteSpace(email.Text) || string.IsNullOrWhiteSpace(password.Text))
+            {
+                await App.Toast(this, "Todos os campos devem ser preenchidos!");
+                return;
+            }
 
             var vm = new CustomerViewModel
             {

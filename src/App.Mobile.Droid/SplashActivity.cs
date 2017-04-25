@@ -2,10 +2,11 @@
 using Android.Content;
 using Android.OS;
 using System.Threading.Tasks;
+using Android.Content.PM;
 
 namespace App.Mobile.Droid
 {
-    [Activity(MainLauncher = true, NoHistory = true, Theme = "@style/SplashTheme")]
+    [Activity(MainLauncher = true, LaunchMode = LaunchMode.SingleTask, NoHistory = true, Theme = "@style/SplashTheme")]
     [IntentFilter(new[] { Intent.ActionMain }, Categories = new[] { Intent.CategoryLauncher })]
     public sealed class SplashActivity : Activity
     {

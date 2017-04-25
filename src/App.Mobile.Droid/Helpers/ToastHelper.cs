@@ -2,6 +2,7 @@
 using Android.Widget;
 using App.Mobile.Shared.Interfaces.Helpers;
 using System.Threading.Tasks;
+using Android.Views;
 
 namespace App.Mobile.Droid.Helpers
 {
@@ -15,7 +16,11 @@ namespace App.Mobile.Droid.Helpers
 
             Activity.RunOnUiThread(() =>
             {
-                Toast.MakeText(Activity, text, duration == 0 ? ToastLength.Short : ToastLength.Long).Show();
+                var toast = Toast.MakeText(Activity, text, duration == 0 ? ToastLength.Short : ToastLength.Long);
+                //toast.SetGravity(GravityFlags.Top, 0, 50);
+                //toast.SetGravity(GravityFlags.Bottom, 0, 45);
+                toast.SetGravity(GravityFlags.Center, 0, 0);
+                toast.Show();
             });
 
             return tcs.Task;

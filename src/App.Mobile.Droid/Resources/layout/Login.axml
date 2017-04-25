@@ -13,13 +13,13 @@
         android:layout_height="match_parent"
         android:background="@drawable/bg_abstract_11"
         android:backgroundTint="#ff4169e1"
-        android:backgroundTintMode="screen">
+        android:backgroundTintMode="screen"
+        android:gravity="center">
         <ImageView
             android:src="@drawable/logo_200x200_rounded"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:id="@+id/LoginLogo"
-            android:layout_marginTop="5pt"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_gravity="center" />
         <TextView
             android:text="Precizzo"

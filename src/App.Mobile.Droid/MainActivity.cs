@@ -8,10 +8,11 @@ using App.Mobile.Droid.Helpers;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Threading.Tasks;
+using Android.Content.PM;
 
 namespace App.Mobile.Droid
 {
-    [Activity(MainLauncher = false)]
+    [Activity(MainLauncher = false, LaunchMode = LaunchMode.SingleTask)]
     public sealed class MainActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

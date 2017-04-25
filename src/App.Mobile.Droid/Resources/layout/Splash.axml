@@ -7,8 +7,8 @@
     android:backgroundTint="#ff4169e1"
     android:backgroundTintMode="screen">
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:id="@+id/SplashLogo"
         android:layout_gravity="center"
         android:src="@drawable/logo_200x200_rounded" />

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace App.Mobile.Droid
 {
-    [Application(Theme = "@style/AppTheme")]
+    [Application(LargeHeap = true, Theme = "@style/AppTheme")]
     public sealed class App : Android.App.Application
     {
         private const string DbName = "Precizzo.db";
