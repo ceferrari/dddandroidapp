@@ -7,10 +7,15 @@ using App.Mobile.Shared.Interfaces.Helpers;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Threading.Tasks;
+using Android.Graphics;
+using Android.Views;
+using App.Mobile.Droid.Activities;
+using Plugin.Iconize.Droid.Controls;
+using ActionBar = Android.Support.V7.App.ActionBar;
 
 namespace App.Mobile.Droid
 {
-    [Application(LargeHeap = true, Theme = "@style/AppTheme")]
+    [Application(LargeHeap = true)]
     public sealed class App : Android.App.Application
     {
         private const string DbName = "Precizzo.db";
@@ -83,6 +88,11 @@ namespace App.Mobile.Droid
         {
             await Task.Run(() =>
             {
+                if (currentActivity.GetType() == newActivityType)
+                {
+                    return;
+                }
+
                 var intent = new Intent(currentActivity, newActivityType);
                 currentActivity.StartActivity(intent);
                 if (finishCurrent)

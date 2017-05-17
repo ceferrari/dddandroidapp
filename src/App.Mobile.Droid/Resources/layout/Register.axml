@@ -11,16 +11,15 @@
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_abstract_11"
-        android:backgroundTint="#ff4169e1"
-        android:backgroundTintMode="screen"
+        android:background="#ccc"
         android:gravity="center">
         <ImageView
-            android:src="@drawable/logo_200x200_rounded"
+            android:src="@mipmap/logo_200x200_rounded"
             android:id="@+id/RegisterLogo"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:layout_width="100dp" />
+            android:layout_width="100dp"
+            android:layout_marginTop="10pt" />
         <TextView
             android:text="Precizzo"
             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -43,7 +42,7 @@
             android:textSize="7pt"
             android:layout_marginLeft="15pt"
             android:layout_marginRight="15pt"
-            android:textColor="#6a5acd"
+            android:textColor="#555"
             android:layout_marginTop="-4pt"
             android:textStyle="normal" />
         <EditText
@@ -51,7 +50,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/RegisterName"
             android:hint="Nome"
-            android:textColorHint="#cccccccc"
+            android:textColorHint="#ffffffff"
             android:textSize="12pt"
             android:layout_marginLeft="20pt"
             android:layout_marginRight="20pt"
@@ -70,7 +69,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/RegisterEmail"
             android:hint="E-mail"
-            android:textColorHint="#cccccccc"
+            android:textColorHint="#ffffffff"
             android:textSize="12pt"
             android:layout_marginLeft="20pt"
             android:layout_marginRight="20pt"
@@ -88,7 +87,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/RegisterPassword"
             android:hint="Senha"
-            android:textColorHint="#cccccccc"
+            android:textColorHint="#ffffffff"
             android:textSize="12pt"
             android:layout_marginLeft="20pt"
             android:layout_marginRight="20pt"
@@ -100,13 +99,14 @@
             android:textColor="#ffffffff"
             android:background="@drawable/edittextunderline"
             android:textAlignment="center"
-            android:drawableTint="#ffffffff" />
+            android:drawableTint="#ffffffff"
+            android:inputType="textPassword" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/RegisterConfirmPassword"
             android:hint="Confirmar Senha"
-            android:textColorHint="#cccccccc"
+            android:textColorHint="#ffffffff"
             android:textSize="12pt"
             android:layout_marginLeft="20pt"
             android:layout_marginRight="20pt"
@@ -118,7 +118,8 @@
             android:textColor="#ffffffff"
             android:background="@drawable/edittextunderline"
             android:textAlignment="center"
-            android:drawableTint="#ffffffff" />
+            android:drawableTint="#ffffffff"
+            android:inputType="textPassword" />
         <Button
             android:text="Salvar"
             android:layout_width="match_parent"
@@ -133,6 +134,7 @@
             android:background="@drawable/roundedbutton"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="bold"
-            android:backgroundTint="#ff0099cc" />
+            android:backgroundTint="#ff6a5acd"
+            android:layout_marginBottom="10pt" />
     </LinearLayout>
 </ScrollView>

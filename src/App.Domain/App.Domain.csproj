@@ -5,6 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Events\" />
+    <Folder Include="CommandHandlers\" />
+    <Folder Include="EventHandlers\" />
     <Folder Include="Validations\Customer\" />
   </ItemGroup>
 

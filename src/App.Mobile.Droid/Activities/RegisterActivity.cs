@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using Android.App;
 using Android.Content.PM;
-using Android.Content.Res;
 using Android.Graphics;
 using Android.OS;
 using Android.Views;
@@ -12,9 +11,9 @@ using App.Application.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using Plugin.Iconize.Droid.Controls;
 
-namespace App.Mobile.Droid
+namespace App.Mobile.Droid.Activities
 {
-    [Activity(MainLauncher = false, LaunchMode = LaunchMode.SingleTask)]
+    [Activity(MainLauncher = false, LaunchMode = LaunchMode.SingleTask, Theme = "@style/LoginTheme")]
     public sealed class RegisterActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

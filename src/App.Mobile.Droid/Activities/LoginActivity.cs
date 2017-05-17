@@ -1,4 +1,7 @@
-﻿using Android.App;
+﻿using System;
+using System.Threading.Tasks;
+using Android.App;
+using Android.Content.PM;
 using Android.Graphics;
 using Android.OS;
 using Android.Views;
@@ -8,13 +11,10 @@ using App.Application.ViewModels;
 using App.Mobile.Droid.Helpers;
 using Microsoft.Extensions.DependencyInjection;
 using Plugin.Iconize.Droid.Controls;
-using System;
-using System.Threading.Tasks;
-using Android.Content.PM;
 
-namespace App.Mobile.Droid
+namespace App.Mobile.Droid.Activities
 {
-    [Activity(MainLauncher = false, LaunchMode = LaunchMode.SingleTask)]
+    [Activity(MainLauncher = false, LaunchMode = LaunchMode.SingleTask, Theme = "@style/LoginTheme")]
     public class LoginActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

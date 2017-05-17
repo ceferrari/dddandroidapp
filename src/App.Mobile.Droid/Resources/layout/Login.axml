@@ -11,16 +11,15 @@
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_abstract_11"
-        android:backgroundTint="#ff4169e1"
-        android:backgroundTintMode="screen"
-        android:gravity="center">
+        android:gravity="center"
+        android:background="#ccc">
         <ImageView
-            android:src="@drawable/logo_200x200_rounded"
+            android:src="@mipmap/logo_200x200_rounded"
             android:layout_width="100dp"
             android:id="@+id/LoginLogo"
             android:layout_height="100dp"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:layout_marginTop="10pt" />
         <TextView
             android:text="Precizzo"
             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -43,7 +42,7 @@
             android:textSize="7pt"
             android:layout_marginLeft="15pt"
             android:layout_marginRight="15pt"
-            android:textColor="#6a5acd"
+            android:textColor="#555"
             android:layout_marginTop="-4pt"
             android:textStyle="normal" />
         <EditText
@@ -52,7 +51,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/LoginEmail"
             android:hint="E-mail"
-            android:textColorHint="#cccccccc"
+            android:textColorHint="#ffffffff"
             android:textSize="12pt"
             android:layout_marginLeft="20pt"
             android:layout_marginRight="20pt"
@@ -70,7 +69,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/LoginPassword"
             android:hint="Senha"
-            android:textColorHint="#cccccccc"
+            android:textColorHint="#ffffffff"
             android:textSize="12pt"
             android:layout_marginLeft="20pt"
             android:layout_marginRight="20pt"
@@ -82,7 +81,8 @@
             android:textColor="#ffffffff"
             android:background="@drawable/edittextunderline"
             android:textAlignment="center"
-            android:drawableTint="#ffffffff" />
+            android:drawableTint="#ffffffff"
+            android:inputType="textPassword" />
         <Button
             android:text="Entrar"
             android:layout_width="match_parent"
@@ -97,7 +97,7 @@
             android:background="@drawable/roundedbutton"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="bold"
-            android:backgroundTint="#ff0099cc" />
+            android:backgroundTint="#ff6a5acd" />
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -113,7 +113,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:text="ou"
-                android:textColor="#e0e0e0"
+                android:textColor="#fff"
                 android:textSize="9pt"
                 android:textStyle="bold"
                 android:layout_centerInParent="true"
@@ -125,12 +125,12 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="20dp"
                 android:layout_toLeftOf="@id/LoginOr"
-                android:background="#e0e0e0" />
+                android:background="#fff" />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_toRightOf="@id/LoginOr"
-                android:background="#e0e0e0"
+                android:background="#fff"
                 android:layout_marginRight="20dp"
                 android:layout_centerVertical="true" />
         </RelativeLayout>
@@ -142,11 +142,12 @@
             android:layout_marginLeft="15pt"
             android:layout_marginRight="15pt"
             android:textSize="12pt"
-            android:backgroundTint="#ff6a5acd"
+            android:backgroundTint="#ff1e90ff"
             android:textAllCaps="true"
             android:capitalize="words"
             android:background="@drawable/roundedbutton"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginBottom="10pt" />
     </LinearLayout>
 </ScrollView>

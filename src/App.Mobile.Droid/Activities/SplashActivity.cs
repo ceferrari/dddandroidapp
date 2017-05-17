@@ -1,10 +1,10 @@
-﻿using Android.App;
+﻿using System.Threading.Tasks;
+using Android.App;
 using Android.Content;
-using Android.OS;
-using System.Threading.Tasks;
 using Android.Content.PM;
+using Android.OS;
 
-namespace App.Mobile.Droid
+namespace App.Mobile.Droid.Activities
 {
     [Activity(MainLauncher = true, LaunchMode = LaunchMode.SingleTask, NoHistory = true, Theme = "@style/SplashTheme")]
     [IntentFilter(new[] { Intent.ActionMain }, Categories = new[] { Intent.CategoryLauncher })]
@@ -37,7 +37,7 @@ namespace App.Mobile.Droid
                 shortcutIntent.AddFlags(ActivityFlags.NewTask);
                 shortcutIntent.AddFlags(ActivityFlags.ClearTop);
 
-                var icon = Intent.ShortcutIconResource.FromContext(this, Resource.Drawable.logo_200x200_rounded);
+                var icon = Intent.ShortcutIconResource.FromContext(this, Resource.Mipmap.logo_200x200_rounded);
 
                 var addIntent = new Intent();
                 addIntent.PutExtra(Intent.ExtraShortcutIntent, shortcutIntent);

@@ -2,73 +2,11 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:fillViewport="true"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:minWidth="25px"
-    android:minHeight="25px">
-    <LinearLayout
-        android:orientation="vertical"
+    android:layout_height="fill_parent">
+    <FrameLayout
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/bg_abstract_11"
-        android:backgroundTint="#ff4169e1"
-        android:backgroundTintMode="screen"
-        android:gravity="center">
-        <ImageView
-            android:src="@drawable/logo_200x200_rounded"
-            android:layout_width="100dp"
-            android:id="@+id/MainLogo"
-            android:layout_height="100dp"
-            android:layout_gravity="center" />
-        <TextView
-            android:text="Precizzo"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/MainLabel"
-            android:layout_marginLeft="15pt"
-            android:layout_marginRight="15pt"
-            android:layout_marginTop="5pt"
-            android:textAllCaps="true"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textSize="24pt" />
-        <TextView
-            android:text="Lista de usuários cadastrados no sistema"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/MainSublabel"
-            android:gravity="center"
-            android:textSize="7pt"
-            android:layout_marginLeft="15pt"
-            android:layout_marginRight="15pt"
-            android:textColor="#6a5acd"
-            android:layout_marginTop="-4pt"
-            android:textStyle="normal" />
-        <ListView
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_width="match_parent"
-            android:layout_height="117pt"
-            android:id="@+id/MainList"
-            android:layout_marginTop="5pt"
-            android:layout_marginLeft="15pt"
-            android:layout_marginRight="15pt" />
-        <Button
-            android:text="SAIR"
-            android:layout_width="match_parent"
-            android:layout_height="25pt"
-            android:id="@+id/MainSignOut"
-            android:layout_marginTop="5pt"
-            android:layout_marginLeft="15pt"
-            android:layout_marginRight="15pt"
-            android:textSize="12pt"
-            android:textAllCaps="true"
-            android:capitalize="words"
-            android:background="@drawable/roundedbutton"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textStyle="bold"
-            android:backgroundTint="#ff0099cc" />
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:id="@+id/FragmentContainer" />
 </ScrollView>
